@@ -4,6 +4,9 @@ from simple_geoip import GeoIP
 from flask import request
 
 
+CONFIG_KEY = "GEOIPIFY_API_KEY"
+
+
 class SimpleGeoIP(object):
     def __init__(self, app=None):
         self.app = app
@@ -11,10 +14,11 @@ class SimpleGeoIP(object):
             self.init_app(app)
 
     def init_app(self, app):
-        if not (app.config.get("GEOIPIFY_API_KEY") or environ.get("GEOIPIFY_API_KEY")):
+        api_key = app.config.get(CONFIG_KEY) or environ.get(CONFIG_KEY)
+        if not api_key:
             raise Exception("No API key was supplied for performing GeoIP lookups. Please set a value for GEOIPIFY_API_KEY.")
 
-        self.geoip_client = GeoIP(environ.get("GEOIPIFY_API_KEY"))
+        self.geoip_client = GeoIP(api_key)
 
     def get_geoip_data(self):
         """
