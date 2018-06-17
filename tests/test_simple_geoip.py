@@ -3,7 +3,7 @@ import pytest
 from os import environ
 from unittest import TestCase
 
-from flask import Flask, jsonify
+from flask import Flask
 from flask_simple_geoip import SimpleGeoIP
 
 
@@ -20,7 +20,7 @@ class TestSimpleGeoIP(TestCase):
             SimpleGeoIP(app)
 
         if api_key:
-            envion["GEOIPIFY_API_KEY"] = api_key
+            environ["GEOIPIFY_API_KEY"] = api_key
 
     def test_init_works_with_environment_variable_config(self):
         environ["GEOIPIFY_API_KEY"] = "test"
@@ -31,3 +31,10 @@ class TestSimpleGeoIP(TestCase):
         self.app.config["GEOIPIFY_API_KEY"] = "test"
         SimpleGeoIP(self.app)
 
+        del self.app.config["GEOIPIFY_API_KEY"]
+
+    def test_get_geoip_data(self):
+        with self.app.test_request_context():
+            simple_geoip = SimpleGeoIP(self.app)
+            data = simple_geoip.get_geoip_data()
+            self.assertIsInstance(data, dict)
