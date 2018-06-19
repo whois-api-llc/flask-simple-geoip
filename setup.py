@@ -6,26 +6,7 @@ The simplest GeoIP lookup library for Flask.
 """
 
 
-from subprocess import call
-from sys import exit
-
-from setuptools import Command, setup
-
-
-class RunTests(Command):
-    """Run our tests."""
-
-    description = "run tests"
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        exit(call(["pytest"], shell=True))
+from setuptools import setup
 
 
 setup(
