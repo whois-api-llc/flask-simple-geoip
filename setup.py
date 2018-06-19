@@ -6,6 +6,8 @@ The simplest GeoIP lookup library for Flask.
 """
 
 
+from os.path import abspath, dirname, join, normpath
+
 from setuptools import setup
 
 
@@ -17,7 +19,7 @@ setup(
     author="Randall Degges",
     author_email="r@rdegges.com",
     description="The simplest GeoIP lookup library for Flask.",
-    long_description=__doc__,
+    long_description=open(normpath(join(dirname(abspath(__file__)), "README.rst"))).read(),
     py_modules=["flask_simple_geoip"],
     zip_safe=False,
     include_package_data=True,

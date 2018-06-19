@@ -16,7 +16,6 @@ The simplest GeoIP lookup library for Flask.
 
 Meta
 ----
-
 - Author: Randall Degges
 - Email: r@rdegges.com
 - Twitter: https://twitter.com/rdegges
