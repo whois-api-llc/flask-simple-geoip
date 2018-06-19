@@ -108,6 +108,14 @@ Changelog
 All library changes in descending order.
 
 
+Version 0.1.1
+*************
+
+**Released June 18, 2018.**
+
+- Fixing readme so it shows properly on PyPI :(
+
+
 Version 0.1.0
 *************
 
