@@ -5,11 +5,9 @@ Flask-Simple-GeoIP
 The simplest GeoIP lookup library for Flask.
 """
 
-
 from os.path import abspath, dirname, join, normpath
 
 from setuptools import setup
-
 
 setup(
     name="Flask-Simple-GeoIP",
@@ -24,7 +22,7 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms="any",
-    install_requires=["Flask", "simple-geoip"],
+    install_requires=["Flask", "simple-geoip", "ipaddress"],
     extras_require={
         "test": ["pytest"],
     },
