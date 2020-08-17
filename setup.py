@@ -11,7 +11,7 @@ from setuptools import setup
 
 setup(
     name="Flask-Simple-GeoIP",
-    version="0.1.1",
+    version="0.2.0",
     url="https://github.com/whois-api-llc/flask-simple-geoip",
     license="BSD",
     author="Randall Degges",
