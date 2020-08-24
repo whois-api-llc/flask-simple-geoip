@@ -107,6 +107,12 @@ Changelog
 
 All library changes in descending order.
 
+Version 0.2.1
+*************
+
+**Released June 18, 2018.**
+
+- Added X_FORWARDED_FOR headers support.
 
 Version 0.1.1
 *************
