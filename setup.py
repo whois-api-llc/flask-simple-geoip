@@ -11,7 +11,7 @@ from setuptools import setup
 
 setup(
     name="Flask-Simple-GeoIP",
-    version="0.2.2",
+    version="0.2.3",
     url="https://github.com/whois-api-llc/flask-simple-geoip",
     license="BSD",
     author="Randall Degges",
@@ -22,7 +22,10 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms="any",
-    install_requires=["Flask", "simple-geoip", "ipaddress"],
+    install_requires=["Flask",
+                      "simple-geoip",
+                      "py2-ipaddress ; python_version<'3'",
+                      "ipaddress ; python_version>='3'"],
     extras_require={
         "test": ["pytest"],
     },

@@ -107,6 +107,13 @@ Changelog
 
 All library changes in descending order.
 
+Version 0.2.3
+*************
+
+**Released August 26, 2020.**
+
+- Fixed pypy support.
+
 Version 0.2.2
 *************
 
