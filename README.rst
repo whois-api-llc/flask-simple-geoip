@@ -29,7 +29,9 @@ Prerequisites
 To use this library, you'll need to create a free GeoIPify account:
 https://geoipify.whoisxmlapi.com/
 
-If you haven't done this yet, please do so now.
+If you haven't done this yet, please do so now; you will obtain an API
+key that will be needed to use the library.
+
 
 
 Installation
@@ -63,6 +65,10 @@ Here's a simple Flask app that makes use of the geolocation lookups:
 
     app = Flask(__name__)
 
+    # The API key is obtained from the GEOIPIFY_API_KEY environment variable.
+    # Alternatively it can be set as follows:
+    # app.config.update(GEOIPIFY_API_KEY='YOUR_API_KEY')
+    
     # Initialize the extension
     simple_geoip = SimpleGeoIP(app)
 
@@ -106,6 +112,14 @@ Changelog
 ---------
 
 All library changes in descending order.
+
+Version 0.2.4
+*************
+
+**Released October 27, 2020.**
+
+- Described in the readme how to supply the API key.
+
 
 Version 0.2.3
 *************
