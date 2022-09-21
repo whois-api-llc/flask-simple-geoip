@@ -65,9 +65,9 @@ Here's a simple Flask app that makes use of the geolocation lookups:
 
     app = Flask(__name__)
 
-    # The API key is obtained from the GEOIPIFY_API_KEY environment variable.
+    # The API key is obtained from the IP_GEOLOCATION_API_KEY environment variable.
     # Alternatively it can be set as follows:
-    # app.config.update(GEOIPIFY_API_KEY='YOUR_API_KEY')
+    # app.config.update(IP_GEOLOCATION_API_KEY='YOUR_API_KEY')
     
     # Initialize the extension
     simple_ip = SimpleGeoIP(app)
@@ -75,7 +75,7 @@ Here's a simple Flask app that makes use of the geolocation lookups:
 
     @app.route('/')
     def test():
-        # Retrieve geoip data for the given requester
+        # Retrieve IP Geolocation data for the given requester
         ip_data = simple_ip.get_geoip_data()
 
         return jsonify(data=ip_data)
